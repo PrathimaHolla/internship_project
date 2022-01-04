@@ -1,9 +1,9 @@
 class User{
-  String userName;
+  // String userName;
   String email;
   String password;
   User({
-    this.userName='',
+    // this.userName='',
     this.email='',
     this.password=''
   });

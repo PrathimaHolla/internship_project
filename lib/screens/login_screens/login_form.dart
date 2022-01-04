@@ -108,7 +108,7 @@ class _loginFormState extends State<loginForm> {
             if(_formKey.currentState!.validate()){
               _formKey.currentState!.save();
               print('${user.email},${user.password}');
-              bool response=await auth.authUser(user.email, user.password);
+              bool response=await auth.authUser(user);
               if(response)
                 Navigator.pushReplacementNamed(context, '/home');
               else

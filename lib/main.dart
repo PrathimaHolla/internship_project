@@ -1,6 +1,7 @@
 // @dart=2.9
 import 'package:finalproject/screens/home_screen.dart';
 import 'package:finalproject/screens/login_screens/main_login_screen.dart';
+import 'package:finalproject/screens/login_screens/signin_screen.dart';
 import 'package:finalproject/screens/splash_screen.dart';
 import 'package:finalproject/services/auth_service.dart';
 import 'package:finalproject/services/menu_list.dart';
@@ -36,6 +37,7 @@ class _MyAppState extends State<MyApp> {
               '/':(context)=>splashScreen(),
               '/login':(context)=>loginScreen(),
               '/home':(context)=>homeScreen(),
+              '/signin':(context)=>signInScreen(),
             },
           )
         ),

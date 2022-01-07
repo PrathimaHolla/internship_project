@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'dart:async';
 import 'dart:collection';
 
 import 'package:finalproject/models/user.dart';
@@ -29,6 +31,8 @@ class Auth extends Model{
     // return true;
     return false;
   }
-
+  Future<void> authSignUp(currUser)async{
+    uv.add(currUser);
+  }
 
 }

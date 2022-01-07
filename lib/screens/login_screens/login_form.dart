@@ -1,6 +1,7 @@
 import 'package:finalproject/models/user.dart';
 import 'package:finalproject/screens/login_screens/input_field.dart';
 import 'package:finalproject/services/auth_service.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class loginForm extends StatefulWidget {
@@ -94,20 +95,24 @@ class _loginFormState extends State<loginForm> {
         Container(
           alignment: Alignment.centerRight,
           padding: EdgeInsets.fromLTRB(0, 10, 40, 20),
-          child: Text(
-            "Forgot Password",
-            style: TextStyle(
-              color: Color.fromRGBO(26, 165, 123, 1),
-              fontSize: 15, 
-              decoration: TextDecoration.underline,
-            ),
-          ),
+          child:RichText(
+            text: TextSpan(
+              text:"Forgot Password?",
+              style: TextStyle(
+                color: Color.fromRGBO(26, 165, 123, 1),
+                fontSize: 15, 
+                decoration: TextDecoration.underline,
+              ),
+              recognizer: TapGestureRecognizer()..onTap=(){
+                //forgot password screen
+              }
+            ))
         ),
         ElevatedButton(
           onPressed: () async{
             if(_formKey.currentState!.validate()){
               _formKey.currentState!.save();
-              print('${user.email},${user.password}');
+              // print('${user.email},${user.password}');
               bool response=await auth.authUser(user);
               if(response)
                 Navigator.pushReplacementNamed(context, '/home');
@@ -144,7 +149,11 @@ class _loginFormState extends State<loginForm> {
                   )
                 ),
                 TextSpan(
-                  text: ("Log in"),
+                  text: ("Sign Up"),
+                  recognizer: TapGestureRecognizer()..onTap = () {
+                    //sign in page
+                    Navigator.pushReplacementNamed(context,'/signin');
+                  },
                   style: TextStyle(
                     color: Color.fromRGBO(26, 165, 123, 1),
                     fontSize: 15,

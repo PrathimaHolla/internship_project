@@ -19,7 +19,7 @@ class _loginScreenState extends State<loginScreen> {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height*.37,
+                height: MediaQuery.of(context).size.height*.35,
                 child: Stack(
                   children: [
                     Container(
@@ -66,7 +66,7 @@ class _loginScreenState extends State<loginScreen> {
                   height: MediaQuery.of(context).size.height*.7,
                   
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(25),topRight: Radius.circular(25)),
+                    borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight: Radius.circular(20)),
                     color: Color.fromRGBO(254,254,254,1),
                   ),
                   

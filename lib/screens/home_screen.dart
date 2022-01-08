@@ -1,6 +1,4 @@
-import 'package:finalproject/screens/cards/menu_card.dart';
 import 'package:finalproject/screens/cards/popular_card.dart';
-import 'package:finalproject/services/auth_service.dart';
 import 'package:finalproject/services/popular_list.dart';
 import 'package:finalproject/services/menu_list.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +44,7 @@ class _homeScreenState extends State<homeScreen> {
                             borderRadius: BorderRadius.only(topLeft: Radius.circular(25),topRight: Radius.circular(25)),
                             color: Colors.white
                           ),
-                          child: Column(
+                          child: ListView(
                             children: [
                               Container(
                                 margin: EdgeInsets.all(20),
@@ -116,12 +114,12 @@ class _homeScreenState extends State<homeScreen> {
                                 children: [
                                   Container(
                                     width: MediaQuery.of(context).size.width,
-                                    height: 250,
+                                    height:500,
                                     child: ListView.builder(
                                       scrollDirection: Axis.horizontal,
                                       itemCount: popularList.popular.length,
                                       itemBuilder: (context,index){
-                                        return PopularCard(popular: popularList.popular[index],);
+                                        return PopularCard(popular: popularList.popular[index]);
                                       }),
                                   )
                                 ],

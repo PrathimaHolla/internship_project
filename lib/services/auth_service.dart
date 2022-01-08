@@ -25,31 +25,4 @@ class Auth extends Model{
   }
 
 }
-  // Set<User>uv=new HashSet();
-  // User user1=new User(
-  //   email: 'prathima@gmail.com',
-  //   password: 'prathima'
-
-  // );//one user prathima
-  // User user2=new User(
-  //   email: 'pallavi@gmail.com',
-  //   password: 'pallavi'
-
-  // );//User pallavi
   
-  // Future<bool> authUser(currUser) async{
-  //   uv.add(user1);
-  //   uv.add(user2);
-  //   for(User u in uv)
-  //   {
-  //     if(u.email==currUser.email && u.password==currUser.password)
-  //       return true;
-  //   }
-    
-  //   return false;
-  // }
-  // Future<void> authSignUp(currUser)async{
-  //   uv.add(currUser);
-  // }
-
-// }

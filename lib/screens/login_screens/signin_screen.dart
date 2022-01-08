@@ -17,7 +17,7 @@ class _signInScreenState extends State<signInScreen> {
   Widget build(BuildContext context) {
     return  SafeArea(
       child: Material(
-        child: Container(
+        child:SingleChildScrollView(child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Stack(
@@ -74,7 +74,6 @@ class _signInScreenState extends State<signInScreen> {
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight: Radius.circular(20)),
                     color: Color.fromRGBO(254,254,254,1),
                   ),
-                  
                   child: Form(
                     key: _formKey, 
                     child: Column(
@@ -193,7 +192,7 @@ class _signInScreenState extends State<signInScreen> {
               ),  
             ],
           ),
-        ),
+        ),)
       ),
     );
   }

@@ -7,12 +7,14 @@ class inputField extends StatelessWidget {
   final String label;
   final IconData iconData;
   final int which;
+  final bool hide;
 
   const inputField({
     required this.user,
     required this.label,
     required this.iconData,
-    required this.which
+    required this.which,
+    required this.hide
   });
   
   @override
@@ -34,6 +36,7 @@ class inputField extends StatelessWidget {
           // ) ,
           prefixIcon: Icon(iconData,color: Color.fromRGBO(26, 165, 123, 1),),
         ),
+        obscureText: hide,
         validator: (value){
           return value!.isEmpty?"Please enter "+label:null;
         },

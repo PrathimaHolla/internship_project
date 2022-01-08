@@ -118,6 +118,7 @@ class _signInScreenState extends State<signInScreen> {
                           label: "Name", 
                           iconData: Icons.person,
                           which: 0,
+                          hide: false,
                         ),
 
                         Container(
@@ -138,6 +139,7 @@ class _signInScreenState extends State<signInScreen> {
                           label: "Email", 
                           iconData: Icons.email,
                           which: 1,
+                          hide:false
                         ),
 
                         Container(
@@ -157,6 +159,7 @@ class _signInScreenState extends State<signInScreen> {
                           label: "Password", 
                           iconData: Icons.lock, 
                           which: 2,
+                          hide: true,
                         ),
                         
                         ElevatedButton(

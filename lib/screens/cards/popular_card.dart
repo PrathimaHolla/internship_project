@@ -22,6 +22,7 @@ class PopularCard extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               image: DecorationImage(
+                
                 image: AssetImage("lib/assets/images/"+popular.imageN+".png"),
                 fit: BoxFit.fill
               )

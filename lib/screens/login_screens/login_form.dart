@@ -73,6 +73,7 @@ class _loginFormState extends State<loginForm> {
           label: "Email", 
           iconData: Icons.email,
           which: 1,
+          hide: false,
         ),
 
         Container(
@@ -92,6 +93,7 @@ class _loginFormState extends State<loginForm> {
           label: "Password", 
           iconData: Icons.lock, 
           which: 2,
+          hide: true,
         ),
         Container(
           alignment: Alignment.centerRight,
@@ -111,7 +113,7 @@ class _loginFormState extends State<loginForm> {
         ),
         
         ElevatedButton(
-          
+  
           onPressed: () async{
             if(_formKey.currentState!.validate()){
               _formKey.currentState!.save();
@@ -135,7 +137,7 @@ class _loginFormState extends State<loginForm> {
             backgroundColor: MaterialStateProperty.all<Color>(
               Color.fromRGBO(26, 165, 123, 1)
             ),
-            fixedSize: MaterialStateProperty.all<Size>(Size(150, 50)),
+            fixedSize: MaterialStateProperty.all<Size>(Size(100, 50)),
           ),
         ),
         Container(

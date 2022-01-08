@@ -29,6 +29,7 @@ class _homeScreenState extends State<homeScreen> {
                       appBar: AppBar(
                         toolbarHeight: 75,
                         elevation: 0,
+                        leading: IconButton(icon:Icon(Icons.arrow_back), onPressed: (){Navigator.pushReplacementNamed(context, '/login');},),
                         title: Text(
                           "FloraGoGo",
                           style: TextStyle(color:Colors.white,fontSize: 20),

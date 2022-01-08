@@ -6,13 +6,13 @@ class inputField extends StatelessWidget {
   final User user;
   final String label;
   final IconData iconData;
-  final bool isPassword;
+  final int which;
 
   const inputField({
     required this.user,
     required this.label,
     required this.iconData,
-    required this.isPassword
+    required this.which
   });
   
   @override
@@ -23,7 +23,6 @@ class inputField extends StatelessWidget {
       child: TextFormField(
         decoration: InputDecoration(
           fillColor: Color.fromRGBO(0,248,248,1),
-          
           labelText:label,
           labelStyle: TextStyle(
             color: Colors.grey,
@@ -39,11 +38,20 @@ class inputField extends StatelessWidget {
           return value!.isEmpty?"Please enter "+label:null;
         },
         onSaved: (value){
-          if(isPassword){
+          // if(isPassword){
+          //   user.password=value as String;
+          //   return;
+          // }
+          // user.email=value as String;
+          if(which==0)
+            user.userName=value as String;
+          else if(which==1)
+            user.email=value as String;
+          else
             user.password=value as String;
-            return;
-          }
-          user.email=value as String;
+            // print("which:"+(which.toString()));
+          // print("In inputflied: \nvalue: "+value+"\n" +user.userName+" "+user.email+" "+user.password);
+          return;
         },
       ),
     );

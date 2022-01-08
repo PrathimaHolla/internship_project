@@ -81,7 +81,7 @@ class _signInScreenState extends State<signInScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          padding: EdgeInsets.fromLTRB(0, 25, 0, 15),
+                          padding: EdgeInsets.fromLTRB(0, 15, 0, 15),
                           child: RichText(//for having two colors in a text
                             text: TextSpan(
                               children: [
@@ -100,7 +100,26 @@ class _signInScreenState extends State<signInScreen> {
                             )
                         ),
                         ),
-                        
+                        Container(
+                          alignment: Alignment.centerLeft,
+                          padding: EdgeInsets.fromLTRB(40, 10, 0, 5),
+                          child: Text(
+                            "User Name",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 17, 
+                            ),
+                          ),
+                        ),
+
+                        //inputflied class required
+                        inputField(
+                          user: user, 
+                          label: "Name", 
+                          iconData: Icons.person,
+                          which: 0,
+                        ),
+
                         Container(
                           alignment: Alignment.centerLeft,
                           padding: EdgeInsets.fromLTRB(40, 10, 0, 5),
@@ -118,7 +137,7 @@ class _signInScreenState extends State<signInScreen> {
                           user: user, 
                           label: "Email", 
                           iconData: Icons.email,
-                          isPassword: false
+                          which: 1,
                         ),
 
                         Container(
@@ -137,15 +156,16 @@ class _signInScreenState extends State<signInScreen> {
                           user: user, 
                           label: "Password", 
                           iconData: Icons.lock, 
-                          isPassword: true
+                          which: 2,
                         ),
                         
                         ElevatedButton(
                           onPressed: () async{
                             if(_formKey.currentState!.validate()){
                               _formKey.currentState!.save();
-                              // print('${user.email},${user.password}');
-                              await auth.authSignUp(user);
+                              await auth.addUser(user);
+                              print("In signin screen:\n");
+                              // print(user);`
                               Navigator.pushReplacementNamed(context, '/login');
                             }
                           }, 

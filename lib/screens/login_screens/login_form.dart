@@ -1,3 +1,4 @@
+import 'package:finalproject/database_helper.dart';
 import 'package:finalproject/models/user.dart';
 import 'package:finalproject/screens/login_screens/input_field.dart';
 import 'package:finalproject/services/auth_service.dart';
@@ -71,7 +72,7 @@ class _loginFormState extends State<loginForm> {
           user: user, 
           label: "Email", 
           iconData: Icons.email,
-          isPassword: false
+          which: 1,
         ),
 
         Container(
@@ -90,7 +91,7 @@ class _loginFormState extends State<loginForm> {
           user: user, 
           label: "Password", 
           iconData: Icons.lock, 
-          isPassword: true
+          which: 2,
         ),
         Container(
           alignment: Alignment.centerRight,
@@ -108,7 +109,9 @@ class _loginFormState extends State<loginForm> {
               }
             ))
         ),
+        
         ElevatedButton(
+          
           onPressed: () async{
             if(_formKey.currentState!.validate()){
               _formKey.currentState!.save();
@@ -118,8 +121,10 @@ class _loginFormState extends State<loginForm> {
                 Navigator.pushReplacementNamed(context, '/home');
               else
                 print("Login unsuccessful!!!");
+              
             }
-          }, 
+          },
+
           child: Text(
             "Login",
             style:TextStyle(
